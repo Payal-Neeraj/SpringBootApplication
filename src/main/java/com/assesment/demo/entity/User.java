@@ -29,7 +29,7 @@ public class User {
 		return "User [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + "]";
 	}
 	
-	
+	//getter-setter methods
 	public long getId() {
 		return id;
 	}

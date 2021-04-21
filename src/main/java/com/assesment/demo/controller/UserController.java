@@ -23,20 +23,14 @@ public class UserController {
 	private UserService userService;
 	RestTemplate restTemplate;
 	
-	@GetMapping("/home")
-	public String home(){
-		return "Your data is succesfully saved on your database";
-		
-	}
-	
-	//get the user
+	//call service method to get the user data from database
 	@GetMapping("/users")
 	public List<User> getUsers(){
 		return this.userService.getUsers();
 		
 	}
 	
-	//post the user
+	//call service class method to save the user data into database
 	@PostMapping("/users")
 	public User addUser(@RequestBody User user) {
 		return this.userService.addUser(user);

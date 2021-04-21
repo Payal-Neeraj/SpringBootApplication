@@ -1,6 +1,6 @@
 package com.assesment.demo.service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +17,18 @@ public class UserImpl implements UserService {
 	
 	List<User> list;
 	public UserImpl() {
-//		list=new ArrayList<>();
-//		list.add(new User("Payal",19, "nssharma@gmail.com"));
-//		list.add(new User("Keshav",24,"keshav@gmail.com"));
 	}
 
-	
+	//call jpa repository method to get all the users data from database
 	  @Override 
-	  public List<User> getUsers() {
-	  
-	  return userDao.findAll(); 
+	  public List<User> getUsers() {	  
+		  return userDao.findAll(); 
 	  }
 	 
 
-	
+	//call jpa repository method to save the user info to database
 	@Override
 	public User addUser(User user) {
-//		list.add(course);
 		userDao.save(user);
 		return user;
 	}
