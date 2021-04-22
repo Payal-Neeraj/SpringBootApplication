@@ -5,28 +5,28 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity			//this annotation is used to map the class to table in database(name of table will be same as class name in small letters)
 public class User {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Id			//change the constraint of an atttribute to primary key
+	@GeneratedValue(strategy=GenerationType.AUTO)			//set the value of an attribute to auto increment
 	private long id;
 	private String name;
 	private int age;
 	private String email;
+	
+	//default construtor of user class
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	//parameterized construtor of user class
 	public User(String name, int age, String email) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.email = email;
-	}
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + "]";
 	}
 	
 	//getter-setter methods
